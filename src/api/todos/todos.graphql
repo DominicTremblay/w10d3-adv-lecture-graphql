@@ -6,4 +6,5 @@ type Todo {
   id: ID!
   task: String!
   completed: Boolean!
+  category: Category
 }
