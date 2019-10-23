@@ -8,3 +8,26 @@ type Todo {
   completed: Boolean!
   category: Category
 }
+
+input NewTodoInput {
+  task: String!
+  completed: Boolean!
+  categoryId: Int!
+}
+
+input UpdateTodoInput {
+  id: ID!
+  task: String
+  completed: Boolean
+  category_id: Int
+}
+
+type Message {
+  msg: String!
+}
+
+type Mutation {
+  addTodo(input: NewTodoInput!): Todo!
+  deleteTodo(id: ID!): Message!
+  updateTodo(input: UpdateTodoInput): Todo!
+}
